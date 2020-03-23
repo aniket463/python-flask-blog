@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about-bg.jpg') }}')" >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>My Blog</h1>
+            <span class="subheading">This Blog For you!!! </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <h1>Basic Actions</h1>
+          <a href="/dashbord"><button class="btn btn-primary">Dashbord Home</button></a>
+          <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+          <hr>
+
+            <h1>ADD/EDIT POST<h1>
+
+            <form name="sentMessage" id="contactForm" action="/edit/{{post.sno}}" method="post" novalidate>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Title" id="Title" name="Title" required autofocus value="{{post.title}}" >
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Tagline</label>
+                    <input type="text" class="form-control" placeholder="Tagline" id="tline" name="tline" required autofocus value="{{post.tagline}}">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Slug</label>
+                    <input type="text" class="form-control" placeholder="Slug-here" id="Slug" name="Slug" required autofocus value="{{post.slug}}">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Content</label>
+                    <textarea rows="5" class="form-control" placeholder="Write your innovative content here---" id="content"  name="content" required auto>{{post.content}}</textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                      <label>Image-File</label>
+                      <input type="text" class="form-control" placeholder="Img_file" id="img_file" name="img_file" required autofocus value="{{post.img_file}}">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+                </div>
+              </form>
+
+        <!-- Pager -->
+        <div class="clearfix">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+ 
