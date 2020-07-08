@@ -1,2 +1,2 @@
 # python-flask-blog
-This is the blog blog we create with MyBlog named
+This is the blog we create with MyBlog named using Flask.
